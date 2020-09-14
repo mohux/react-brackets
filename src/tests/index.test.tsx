@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 test('Works with empty rounds', () => {
   const rounds: RoundProps[] = [];
   const { container } = render(<Bracket rounds={rounds} />);
-  expect(container).toBeTruthy();
+  expect(container).toBeInTheDocument();
 });
 
 test('Works with multiple rounds', () => {
