@@ -2,7 +2,12 @@
 
 > Dynamic bracket component, usable for brackets such as single elimination and double elimination
 
+
 [![NPM](https://img.shields.io/npm/v/react-brackets.svg)](https://www.npmjs.com/package/react-brackets) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+![react-brackets](https://github.com/mohux/react-brackets/blob/master/images/web.gif "react-brackets")
+![react-brackets](https://github.com/mohux/react-brackets/blob/master/images/mobile.gif "react-brackets")
+
 
 ## Install
 
