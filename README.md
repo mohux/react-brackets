@@ -146,6 +146,19 @@ const Component = () => {
 };
 ```
 
+## Bracket Props
+
+|Prop|Type  | Description|
+|--|--|--|
+| rounds| RoundProps[]| Array of rounds, each round has {title,array of seeds}, if you're not using a custom seed render, each seed needs an array of teams, each team should have a name|
+| mobileBreakpoint | number | This bracket supports responsive design, on window reaching this size, it will trigger mobile swipable view, if you want to disable it, you can pass 0, (default is 992) |
+| rtl| boolean| Direction of the bracket as RTL (default is LTR) |
+| roundClassName| string| Round wrapper className |
+| bracketClassName| string| The bracket className |
+| renderSeedComponent| functional component| Custom render for every seed |
+| roundTitleComponent| functional component| Custom render for every round title|
+
+
 For detailed examples, you can clone this repo then:
 > you can skip starting the root folder, but if you want to modify the library you have to run it.
 
