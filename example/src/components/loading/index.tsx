@@ -39,11 +39,9 @@ const RenderLoadingSeed = (seed: any, breakpoint: number) => {
       mobileBreakpoint={breakpoint}
       className='test'
     >
-      <SeedItem
-        className='skeleton-item'
-
-      >
+      <SeedItem className='skeleton-item'>
         <div>
+          {/* you can use height instead of adding a dot also :O */}
           <SeedTeam>.</SeedTeam>
           <SeedTeam>.</SeedTeam>
         </div>

@@ -1,16 +1,20 @@
 import React from 'react';
-// import DoubleEl from './doubleElimination';
-// import SingleEl from './components/singleElimination';
-import DoubleEl from './components/doubleElimination';
+import DoubleElimination from './components/double-elimination';
+import LoadingBracket from './components/loading';
+import SingleElimination from './components/single-elimination';
 
 const App = () => {
   return (
     <div>
-      <h2>Single Elimination</h2>
-      {/* <SingleEl /> */}
-      <hr style={{ marginTop: 50, marginBottom: 50 }} />
-      <h2>Double Elimination</h2>
-      <DoubleEl />
+      <h3>Loading Skeleton</h3>
+      <hr />
+      <LoadingBracket />
+      <h3>Single Elimination</h3>
+      <hr />
+      <SingleElimination />
+      <h3>Double Elimination</h3>
+      <hr />
+      <DoubleElimination />
     </div>
   );
 };

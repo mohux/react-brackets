@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bracket, Seed, SeedItem, SeedTeam, SeedTime,RoundProps } from 'tournaments-brackets';
+import { Bracket, Seed, SeedItem, SeedTeam, SeedTime, RoundProps } from 'tournaments-brackets';
 
 const rounds: RoundProps[] = [
   {
@@ -49,25 +49,9 @@ const rounds: RoundProps[] = [
   },
 ];
 
-interface ContextProps {
-  focused: any;
-  setFocused?: any;
-}
-const MyContext = React.createContext<ContextProps>({
-  focused: null,
-});
-
 const RenderSeed = (seed: any, breakpoint: number) => {
   return (
-    <Seed
-      style={{
-        opacity: !seed.teams?.[0] && !seed.teams?.[1] ? 0.5 : 1,
-        minWidth: 175,
-        fontSize: 11,
-      }}
-      className='custom-border'
-      mobileBreakpoint={breakpoint}
-    >
+    <Seed mobileBreakpoint={breakpoint}>
       <SeedItem style={{ width: '100%' }}>
         <div>
           <SeedTeam>{seed.teams?.[0].name || '-----------'}</SeedTeam>
@@ -82,18 +66,15 @@ const RenderSeed = (seed: any, breakpoint: number) => {
   );
 };
 
-const SingleEl = () => {
-  const [focused, setFocused] = React.useState(null);
+const SingleElimination = () => {
   return (
-    <MyContext.Provider value={{ focused, setFocused }}>
-      <Bracket
-        mobileBreakpoint={767}
-        rounds={rounds}
-        renderSeedComponent={RenderSeed}
-        swipeableProps={{ enableMouseEvents: true,animateHeight:true }}
-      />
-    </MyContext.Provider>
+    <Bracket
+      mobileBreakpoint={767}
+      rounds={rounds}
+      renderSeedComponent={RenderSeed}
+      swipeableProps={{ enableMouseEvents: true, animateHeight: true }}
+    />
   );
 };
 
-export default SingleEl;
+export default SingleElimination;

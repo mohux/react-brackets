@@ -157,7 +157,7 @@ const Component = () => {
 | bracketClassName| string| The bracket className |
 | renderSeedComponent| functional component| Custom render for every seed |
 | roundTitleComponent| functional component| Custom render for every round title|
-
+| swipeableProps| SwipeableProps | Please check this [React Swipeable Views](https://github.com/oliviertassinari/react-swipeable-views)|
 
 For detailed examples, you can clone this repo then:
 > you can skip starting the root folder, but if you want to modify the library you have to run it.
