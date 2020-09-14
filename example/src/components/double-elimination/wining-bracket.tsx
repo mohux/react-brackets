@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bracket, Seed, SeedItem, SeedTeam, RoundProps } from 'tournaments-brackets';
+import { Bracket, Seed, SeedItem, SeedTeam, RoundProps } from 'react-brackets';
 
 interface LosingProps {
   rounds: RoundProps[];

@@ -1,8 +1,8 @@
-# tournaments-brackets
+# react-brackets
 
 > Dynamic bracket component, usable for brackets such as single elimination and double elimination
 
-[![NPM](https://img.shields.io/npm/v/tournaments-brackets.svg)](https://www.npmjs.com/package/tournaments-brackets) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-brackets.svg)](https://www.npmjs.com/package/react-brackets) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
@@ -10,7 +10,7 @@ via npm
 
 ```bash
 
-npm install --save tournaments-brackets
+npm install --save react-brackets
 
 ```
 
@@ -18,7 +18,7 @@ via yarn
 
 ```bash
 
-yarn add --save tournaments-brackets
+yarn add --save react-brackets
 
 ```
 
@@ -27,7 +27,7 @@ yarn add --save tournaments-brackets
 The simplest usage of this component is
 
 ```jsx
-import { Bracket, RoundProps } from 'tournaments-brackets';
+import { Bracket, RoundProps } from 'react-brackets';
 
 const rounds: RoundProps[] = [
   {
@@ -67,7 +67,7 @@ The core shape is similar to the above, since we can customize seeds and titles,
 modifying a title of the round is so simple,
 
 ```jsx
-import { Bracket, RoundProps } from 'tournaments-brackets';
+import { Bracket, RoundProps } from 'react-brackets';
 import React from 'react';
 
 const Component = () => {
@@ -87,7 +87,7 @@ Customizing a seed on the other hand is a little bit more complicated, yet still
 because we need to let the bracket tree to have a consitent design
 
 ```jsx
-import { Bracket, RoundProps, Seed, SeedItem, SeedTeam } from 'tournaments-brackets';
+import { Bracket, RoundProps, Seed, SeedItem, SeedTeam } from 'react-brackets';
 import React from 'react';
 
 const CustomSeed = (seed: any, breakpoint: number, roundIndex: number) => {
@@ -116,7 +116,7 @@ const Component = () => {
 How about if I want to use this component for double elimination losing bracket? the current Seed component only works on single elimination, the answer is fairly simple as well.
 
 ```jsx
-import { Bracket, RoundProps, Seed, SingleLineSeed, SeedItem, SeedTeam } from 'tournaments-brackets';
+import { Bracket, RoundProps, Seed, SingleLineSeed, SeedItem, SeedTeam } from 'react-brackets';
 import React from 'react';
 
 const CustomSeed = (seed: any, breakpoint: number, roundIndex: number) => {

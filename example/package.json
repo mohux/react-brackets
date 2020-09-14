@@ -1,5 +1,5 @@
 {
-  "name": "tournaments-brackets-example",
+  "name": "react-brackets-example",
   "homepage": ".",
   "version": "0.0.0",
   "private": true,
@@ -20,7 +20,7 @@
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
-    "tournaments-brackets": "link:..",
+    "react-brackets": "link:..",
     "typescript": "link:../node_modules/typescript",
     "underscore": "^1.11.0"
   },

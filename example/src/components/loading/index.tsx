@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bracket, Seed, SeedItem, SeedTeam, SeedTime } from 'tournaments-brackets';
+import { Bracket, Seed, SeedItem, SeedTeam, SeedTime } from 'react-brackets';
 import './loading.css';
 const loadingData = [
   {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { RoundProps } from 'tournaments-brackets';
+import { RoundProps } from 'react-brackets';
 import LosingBracket from './losing-bracket';
 import WiningBracket from './wining-bracket';
 
