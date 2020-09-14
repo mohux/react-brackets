@@ -32,7 +32,7 @@ yarn add --save tournaments-brackets
 
 
 The simplest usage of this component is
-```jsx
+```tsx
 
 import  {Bracket,RoundProps} from  'tournaments-brackets';
 
@@ -85,7 +85,7 @@ return  <Bracket rounds={rounds}/>;
 The core shape is similar to the above, since we can customize seeds and titles, you can pass any additional data to a seed or treat the title as a component.
 
   modifying a title of the round is so simple,
-```jsx
+```tsx
 
 import  {Bracket,RoundProps} from  'tournaments-brackets';
 import React from 'react';
@@ -105,7 +105,7 @@ return  <Bracket rounds={rounds}
 Customizing a seed on the other hand is a little bit more complicated, yet still easy,
 because we need to let the bracket tree to have a consitent design
 
-```jsx
+```tsx
 import  {Bracket,RoundProps,Seed,SeedItem,SeedTeam} from  'tournaments-brackets';
 import React from 'react';
 
@@ -136,16 +136,15 @@ return  <Bracket rounds={rounds} renderSeedComponent={CustomSeed} />;
 
 How about if I want to use this component for double elimination losing bracket? the current Seed component only works on single elimination, the answer is fairly simple as well.
 
-```jsx
+```tsx
 import  {Bracket,RoundProps,Seed,SingleLineSeed,SeedItem,SeedTeam} from  'tournaments-brackets';
 import React from 'react';
 
 const CustomSeed = (seed:any,breakpoint:number,roundIndex:number) => {
-// breakpoint passed to Bracket component
-// to check if mobile view is triggered or not
 
 // ------ assuming rounds is the losers brackets rounds ------
 // losers rounds usually got some identical seeds amount like (2 - 2 - 1 - 1)
+
 const isLineConnector =
  rounds[roundIndex].seeds.length ===
  rounds[roundIndex + 1]?.seeds.length
