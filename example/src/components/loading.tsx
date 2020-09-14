@@ -1,5 +1,5 @@
 import React from 'react';
-import { SingleElimination, Seed, SeedItem, SeedTeam, SeedTime } from 'tournaments-brackets';
+import { Bracket, Seed, SeedItem, SeedTeam, SeedTime } from 'tournaments-brackets';
 import './loading.css';
 const loadingData = [
   {
@@ -56,7 +56,7 @@ const RenderLoadingSeed = (seed: any, breakpoint: number) => {
 };
 
 const LoadingBracket = () => {
-  return <SingleElimination rounds={loadingData} renderSeedComponent={RenderLoadingSeed} />;
+  return <Bracket rounds={loadingData} renderSeedComponent={RenderLoadingSeed} />;
 };
 
 export default LoadingBracket;
