@@ -147,6 +147,7 @@ const Component = () => {
 ```
 
 For detailed examples, you can clone this repo then:
+> you can skip starting the root folder, but if you want to modify the library you have to run it.
 
 ```bash
 yarn
