@@ -1,6 +1,6 @@
 # tournaments-brackets
 
-> Dynamic bracket component
+> Dynamic bracket component, usable for brackets such as single elimination and double elimination
 
 [![NPM](https://img.shields.io/npm/v/tournaments-brackets.svg)](https://www.npmjs.com/package/tournaments-brackets) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
