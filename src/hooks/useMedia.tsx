@@ -13,10 +13,12 @@ export default function useMedia(breakPoint: number) {
         setIsSmaller(true);
       }
     }
-    window.addEventListener('resize', screenResized);
+    if (typeof window !== 'undefined') window.addEventListener('resize', screenResized);
 
     // to remove the event listener when this component is unmounted.
-    return () => window.removeEventListener('resize', screenResized);
+    return () => {
+      if (typeof window !== 'undefined') window.removeEventListener('resize', screenResized);
+    };
   }, [isSmaller]);
 
   // the return value should be true or false
