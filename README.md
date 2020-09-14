@@ -146,6 +146,35 @@ const Component = () => {
 };
 ```
 
+For detailed examples, you can clone this repo then:
+
+```bash
+yarn
+```
+
+then
+
+```bash
+yarn start
+```
+then open a new terminal
+
+```bash
+cd example
+```
+
+then
+
+```bash
+yarn
+```
+
+lastly
+
+```bash
+yarn start
+```
+
 ## License
 
 MIT © [mohux](https://github.com/mohux)
