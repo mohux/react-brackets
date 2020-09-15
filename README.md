@@ -89,6 +89,8 @@ const Component = () => {
 Customizing a seed on the other hand is a little bit more complicated, yet still easy,
 because we need to let the bracket tree to have a consitent design
 
+**Any additional data you pass inside a seed object is accessibile via renderSeedComponent**
+
 ```jsx
 import { Bracket, RoundProps, Seed, SeedItem, SeedTeam } from 'react-brackets';
 import React from 'react';
