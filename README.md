@@ -78,7 +78,7 @@ const Component = () => {
   return (
     <Bracket
       rounds={rounds}
-      renterTitleComponent={(title: React.ReactNode, roundIndex: number) => {
+      renderTitleComponent={(title: React.ReactNode, roundIndex: number) => {
         return <div style={{ textAlign: 'center', color: 'red' }}>{title}</div>;
       }}
     />
