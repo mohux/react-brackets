@@ -121,7 +121,7 @@ const Component = () => {
 How about if I want to use this component for double elimination losing bracket? the current Seed component only works on single elimination, the answer is fairly simple as well.
 
 ```jsx
-import { Bracket, RoundProps, Seed, SingleLineSeed, SeedItem, SeedTeam } from 'react-brackets';
+import { Bracket, RoundProps, Seed, SingleLineSeed, SeedItem, SeedTeam, RenderSeedProps } from 'react-brackets';
 import React from 'react';
 
 const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}: RenderSeedProps) => {
