@@ -4,6 +4,13 @@ import SwipeableViews, { SwipeableViewsProps } from 'react-swipeable-views';
 import useMedia from '../hooks/useMedia';
 import { renderSeed, renderTitle } from '../utils/renders';
 
+export interface RenderSeedProps {
+  seed: any;
+  breakpoint: number;
+  roundIdx: number;
+  seedIndex: number;
+}
+
 export interface SingleEliminationProps {
   // If true, the component direction will be set to RTL
   rtl?: boolean;
@@ -27,7 +34,7 @@ export interface SingleEliminationProps {
    * @param {number} breakpoint the breakpoint used to determine responsive size
    * @param {number} roundIdx the current round index
    */
-  renderSeedComponent?: (seed: any, breakpoint: number, roundIdx: number) => any;
+  renderSeedComponent?: ({ seed, breakpoint, roundIdx, seedIndex }: RenderSeedProps) => any;
 }
 
 const SingleElimination = ({
@@ -48,7 +55,9 @@ const SingleElimination = ({
       {round.title && roundTitleComponent(round.title, roundIdx)}
       <SeedsList>
         {round.seeds.map((seed, idx) => (
-          <Fragment key={idx}>{renderSeedComponent(seed, mobileBreakpoint, roundIdx)}</Fragment>
+          <Fragment key={idx}>
+            {renderSeedComponent({ seed, breakpoint: mobileBreakpoint, roundIdx, seedIndex: idx })}
+          </Fragment>
         ))}
       </SeedsList>
     </Round>

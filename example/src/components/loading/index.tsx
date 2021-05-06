@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bracket, Seed, SeedItem, SeedTeam, SeedTime } from 'react-brackets';
+import { Bracket, RenderSeedProps, Seed, SeedItem, SeedTeam, SeedTime } from 'react-brackets';
 import './loading.css';
 const loadingData = [
   {
@@ -29,7 +29,7 @@ const loadingData = [
   },
 ];
 
-const RenderLoadingSeed = (seed: any, breakpoint: number) => {
+const RenderLoadingSeed = ({ seed, breakpoint }: RenderSeedProps) => {
   return (
     <Seed
       // style={{
