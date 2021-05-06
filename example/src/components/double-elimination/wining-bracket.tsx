@@ -1,12 +1,12 @@
 import React from 'react';
-import { Bracket, Seed, SeedItem, SeedTeam, RoundProps } from 'react-brackets';
+import { Bracket, Seed, SeedItem, SeedTeam, RoundProps, RenderSeedProps } from 'react-brackets';
 
 interface LosingProps {
   rounds: RoundProps[];
 }
 
 const WiningBracket: React.FC<LosingProps> = ({ rounds: wining }) => {
-  const RenderSeed = (seed: any, breakpoint: number) => {
+  const RenderSeed = ({ seed, breakpoint }: RenderSeedProps) => {
     return (
       <Seed
         style={{

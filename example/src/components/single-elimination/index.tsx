@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bracket, Seed, SeedItem, SeedTeam, SeedTime, RoundProps } from 'react-brackets';
+import { Bracket, Seed, SeedItem, SeedTeam, SeedTime, RoundProps, RenderSeedProps } from 'react-brackets';
 
 const rounds: RoundProps[] = [
   {
@@ -49,7 +49,7 @@ const rounds: RoundProps[] = [
   },
 ];
 
-const RenderSeed = (seed: any, breakpoint: number) => {
+const RenderSeed = ({ breakpoint, seed }: RenderSeedProps) => {
   return (
     <Seed mobileBreakpoint={breakpoint}>
       <SeedItem style={{ width: '100%' }}>
