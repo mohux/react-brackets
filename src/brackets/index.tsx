@@ -7,7 +7,7 @@ import { renderSeed, renderTitle } from '../utils/renders';
 export interface RenderSeedProps {
   seed: any;
   breakpoint: number;
-  roundIdx: number;
+  roundIndex: number;
   seedIndex: number;
 }
 
@@ -34,7 +34,7 @@ export interface SingleEliminationProps {
    * @param {number} breakpoint the breakpoint used to determine responsive size
    * @param {number} roundIdx the current round index
    */
-  renderSeedComponent?: ({ seed, breakpoint, roundIdx, seedIndex }: RenderSeedProps) => any;
+  renderSeedComponent?: ({ seed, breakpoint, roundIndex, seedIndex }: RenderSeedProps) => any;
 }
 
 const SingleElimination = ({
@@ -56,7 +56,7 @@ const SingleElimination = ({
       <SeedsList>
         {round.seeds.map((seed, idx) => (
           <Fragment key={idx}>
-            {renderSeedComponent({ seed, breakpoint: mobileBreakpoint, roundIdx, seedIndex: idx })}
+            {renderSeedComponent({ seed, breakpoint: mobileBreakpoint, roundIndex: roundIdx, seedIndex: idx })}
           </Fragment>
         ))}
       </SeedsList>

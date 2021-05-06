@@ -92,10 +92,10 @@ because we need to let the bracket tree to have a consitent design
 **Any additional data you pass inside a seed object is accessibile via renderSeedComponent**
 
 ```jsx
-import { Bracket, RoundProps, Seed, SeedItem, SeedTeam } from 'react-brackets';
+import { Bracket, RoundProps, Seed, SeedItem, SeedTeam, RenderSeedProps } from 'react-brackets';
 import React from 'react';
 
-const CustomSeed = (seed: any, breakpoint: number, roundIndex: number) => {
+const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}: RenderSeedProps) => {
   // breakpoint passed to Bracket component
   // to check if mobile view is triggered or not
 
@@ -124,7 +124,7 @@ How about if I want to use this component for double elimination losing bracket?
 import { Bracket, RoundProps, Seed, SingleLineSeed, SeedItem, SeedTeam } from 'react-brackets';
 import React from 'react';
 
-const CustomSeed = (seed: any, breakpoint: number, roundIndex: number) => {
+const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}: RenderSeedProps) => {
   // ------ assuming rounds is the losers brackets rounds ------
   // losers rounds usually got some identical seeds amount like (2 - 2 - 1 - 1)
 
