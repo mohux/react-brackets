@@ -49,14 +49,17 @@ const SingleElimination = ({
 }: SingleEliminationProps) => {
   // Checking responsive size
   const isResponsive = useMedia(mobileBreakpoint);
+  
+  const RoundTitleComponent = roundTitleComponent;
+  const RenderSeedComponent = renderSeedComponent;
 
   const data = rounds.map((round, roundIdx) => (
     <Round key={roundIdx} className={roundClassName} mobileBreakpoint={mobileBreakpoint}>
-      {round.title && roundTitleComponent(round.title, roundIdx)}
+      {round.title && <RoundTitleComponent title={round.title}, index={roundIdx} />}
       <SeedsList>
         {round.seeds.map((seed, idx) => (
           <Fragment key={idx}>
-            {renderSeedComponent({ seed, breakpoint: mobileBreakpoint, roundIndex: roundIdx, seedIndex: idx })}
+            {<RenderSeedComponent seed={seed}, breakpoint={mobileBreakpoint}, roundIndex={roundIdx}, seedIndex={idx} />}
           </Fragment>
         ))}
       </SeedsList>
