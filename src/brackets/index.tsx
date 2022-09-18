@@ -25,7 +25,13 @@ const SingleElimination = ({
         {round.seeds.map((seed, idx) => {
           return (
             <Fragment key={seed.id}>
-              {renderSeedComponent({ seed, breakpoint: mobileBreakpoint, roundIndex: roundIdx, seedIndex: idx })}
+              {renderSeedComponent({
+                seed,
+                breakpoint: mobileBreakpoint,
+                roundIndex: roundIdx,
+                seedIndex: idx,
+                rounds,
+              })}
             </Fragment>
           );
         })}

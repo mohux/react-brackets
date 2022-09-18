@@ -1,3 +1,5 @@
+import { IRoundProps } from './Rounds';
+
 export type ISeedProps = {
   id: number;
   teams: Array<{ name?: string }>;
@@ -11,4 +13,5 @@ export interface IRenderSeedProps<ISeed = ISeedProps> {
   breakpoint: number;
   roundIndex: number;
   seedIndex: number;
+  rounds?: IRoundProps[];
 }
