@@ -1,16 +1,7 @@
 import styled from 'styled-components';
+import { ISeedProps } from '../types/Seed';
 
-export interface RoundProps {
-  seeds: any[];
-  title: string;
-  [key: string]: any;
-}
-
-interface BreakPoint {
-  mobileBreakpoint?: number;
-}
-
-export const Bracket = styled.div<BreakPoint>(
+export const Bracket = styled.div<ISeedProps>(
   (props) => `
   display: flex;
   flex-direction: row;
@@ -20,7 +11,7 @@ export const Bracket = styled.div<BreakPoint>(
   `
 );
 
-export const Round = styled.div<BreakPoint>(
+export const Round = styled.div<ISeedProps>(
   (props) => `
   flex: 0;
   // min-width:300px;
@@ -37,6 +28,7 @@ export const RoundTitle = styled.div`
   font-weight: 400;
   text-align: center;
 `;
+
 export const SeedsList = styled.div`
   margin: 0;
   padding: 0;

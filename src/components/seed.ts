@@ -1,11 +1,5 @@
 import styled from 'styled-components';
-
-export interface SeedProps {
-  mobileBreakpoint?: number;
-}
-export interface SeedTimeProps {
-  mobileBreakpoint?: number;
-}
+import { ISeedProps } from '../types/Seed';
 
 export const SeedItem = styled.div`
   color: #fff;
@@ -27,7 +21,7 @@ export const SeedTeam = styled.div`
   align-items: center;
 `;
 
-export const SeedTime = styled.div<SeedTimeProps>(
+export const SeedTime = styled.div<ISeedProps>(
   (props) => `
 margin-top: 2px;
 font-size: 12px;
@@ -46,7 +40,7 @@ height: 0;
  * The best behavior in such case is, to check if the next round seeds matches the current round seeds
  */
 
-export const SingleLineSeed = styled.div<SeedProps>(
+export const SingleLineSeed = styled.div<ISeedProps>(
   (props) => `
 padding: 1em 1.5em;
 min-width: 225px;
@@ -86,7 +80,7 @@ font-size: 14px;
 `
 );
 
-export const Seed = styled.div<SeedProps>(
+export const Seed = styled.div<ISeedProps>(
   (props) => `
   padding: 1em 1.5em;
   min-width: 225px;
