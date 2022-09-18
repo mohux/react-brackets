@@ -2,7 +2,7 @@ import { IRoundProps } from './Rounds';
 
 export type ISeedProps = {
   id: number;
-  teams: Array<{ name?: string }>;
+  teams: Array<{ name?: string; [key: string]: any }>;
   date?: string;
   mobileBreakpoint?: number;
   [key: string]: any;

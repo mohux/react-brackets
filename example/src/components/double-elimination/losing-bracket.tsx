@@ -1,13 +1,13 @@
 import React from 'react';
-import { Bracket, Seed, SingleLineSeed, SeedItem, SeedTeam, RoundProps, RenderSeedProps } from 'react-brackets';
+import { Bracket, Seed, SingleLineSeed, SeedItem, SeedTeam, IRoundProps, IRenderSeedProps } from 'react-brackets';
 
 interface LosingProps {
-  rounds: RoundProps[];
+  rounds: IRoundProps[];
 }
 
 const LosingBracket: React.FC<LosingProps> = ({ rounds: losing }) => {
-  const RenderLosingSeed = ({ breakpoint, roundIdx, seed }: RenderSeedProps) => {
-    const isLineConnector = losing[roundIdx].seeds.length === losing[roundIdx + 1]?.seeds.length;
+  const RenderLosingSeed = ({ breakpoint, roundIndex, seed }: IRenderSeedProps) => {
+    const isLineConnector = losing[roundIndex].seeds.length === losing[roundIndex + 1]?.seeds.length;
     const Wrapper = isLineConnector ? SingleLineSeed : Seed;
     return (
       <Wrapper mobileBreakpoint={breakpoint}>

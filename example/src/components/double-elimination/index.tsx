@@ -1,9 +1,9 @@
 import React from 'react';
-import { RoundProps } from 'react-brackets';
+import { IRoundProps } from 'react-brackets';
 import LosingBracket from './losing-bracket';
 import WiningBracket from './wining-bracket';
 
-const wining: RoundProps[] = [
+const wining: IRoundProps[] = [
   {
     title: 'Round 1',
     seeds: [
@@ -50,11 +50,11 @@ const wining: RoundProps[] = [
     }),
   },
 ];
-const losing: RoundProps[] = [
+const losing: IRoundProps[] = [
   {
     title: 'Round 1',
     seeds: [
-      {},
+      {id:0, teams:[]},
       {
         id: 1,
         date: new Date().toDateString(),
@@ -68,7 +68,6 @@ const losing: RoundProps[] = [
   {
     title: 'Round 2',
     seeds: [
-      {},
       {
         id: 1,
         date: new Date().toDateString(),
