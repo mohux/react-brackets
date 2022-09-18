@@ -1,0 +1,14 @@
+export type ISeedProps = {
+  id: number;
+  teams: Array<{ name?: string }>;
+  date?: string;
+  mobileBreakpoint?: number;
+  [key: string]: any;
+};
+
+export interface IRenderSeedProps<ISeed = ISeedProps> {
+  seed: ISeed;
+  breakpoint: number;
+  roundIndex: number;
+  seedIndex: number;
+}

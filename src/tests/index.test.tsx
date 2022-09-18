@@ -1,16 +1,18 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { Bracket, RoundProps } from '..';
+import { IRoundProps } from '../types/Rounds';
+import { SingleElimination as Bracket } from '../brackets';
 import { render } from '@testing-library/react';
+import { IRenderSeedProps, ISeedProps } from '../types/Seed';
 
 test('Works with empty rounds', () => {
-  const rounds: RoundProps[] = [];
+  const rounds: IRoundProps[] = [];
   const { container } = render(<Bracket rounds={rounds} />);
   expect(container).toBeInTheDocument();
 });
 
 test('Works with multiple rounds', () => {
-  const filledRounds: RoundProps[] = [
+  const filledRounds: IRoundProps[] = [
     {
       title: 'Round 1',
       seeds: [
@@ -42,7 +44,7 @@ test('Works with multiple rounds', () => {
 });
 
 test('Works with custom seed', () => {
-  const filledRounds: RoundProps[] = [
+  const filledRounds: IRoundProps[] = [
     {
       title: 'Round 1',
       seeds: [
@@ -67,12 +69,12 @@ test('Works with custom seed', () => {
     },
   ];
 
-  const RenderSeed = (seed: any) => {
+  const RenderSeed = ({ seed }: IRenderSeedProps) => {
     return (
       <div>
-        <div>{seed.teams[0]?.name}</div>
+        <div>{seed.teams?.[0]?.name}</div>
         <span>VS</span>
-        <div>{seed.teams[1]?.name}</div>
+        <div>{seed.teams?.[1]?.name}</div>
       </div>
     );
   };
