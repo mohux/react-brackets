@@ -8,8 +8,8 @@ export type ISeedProps = {
   [key: string]: any;
 };
 
-export interface IRenderSeedProps<ISeed = ISeedProps> {
-  seed: ISeed;
+export interface IRenderSeedProps {
+  seed: ISeedProps;
   breakpoint: number;
   roundIndex: number;
   seedIndex: number;
