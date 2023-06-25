@@ -30,9 +30,9 @@ yarn add --save react-brackets
 The simplest usage of this component is
 
 ```jsx
-import { Bracket, RoundProps } from 'react-brackets';
+import { Bracket, IRoundProps } from 'react-brackets';
 
-const rounds: RoundProps[] = [
+const rounds: IRoundProps[] = [
   {
     title: 'Round one',
     seeds: [
@@ -70,7 +70,7 @@ The core shape is similar to the above, since we can customize seeds and titles,
 modifying a title of the round is so simple,
 
 ```jsx
-import { Bracket, RoundProps } from 'react-brackets';
+import { Bracket, IRoundProps } from 'react-brackets';
 import React from 'react';
 
 const Component = () => {
@@ -87,15 +87,15 @@ const Component = () => {
 ```
 
 Customizing a seed on the other hand is a little bit more complicated, yet still easy,
-because we need to let the bracket tree to have a consitent design
+because we need to let the bracket tree to have a consistent design
 
-**Any additional data you pass inside a seed object is accessibile via renderSeedComponent**
+**Any additional data you pass inside a seed object is accessible via renderSeedComponent**
 
 ```jsx
-import { Bracket, RoundProps, Seed, SeedItem, SeedTeam, RenderSeedProps } from 'react-brackets';
+import { Bracket, IRoundProps, Seed, SeedItem, SeedTeam, IRenderSeedProps } from 'react-brackets';
 import React from 'react';
 
-const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}: RenderSeedProps) => {
+const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}: IRenderSeedProps) => {
   // breakpoint passed to Bracket component
   // to check if mobile view is triggered or not
 
@@ -121,10 +121,10 @@ const Component = () => {
 How about if I want to use this component for double elimination losing bracket? the current Seed component only works on single elimination, the answer is fairly simple as well.
 
 ```jsx
-import { Bracket, RoundProps, Seed, SingleLineSeed, SeedItem, SeedTeam, RenderSeedProps } from 'react-brackets';
+import { Bracket, IRoundProps, Seed, SingleLineSeed, SeedItem, SeedTeam, IRenderSeedProps } from 'react-brackets';
 import React from 'react';
 
-const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}: RenderSeedProps) => {
+const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}: IRenderSeedProps) => {
   // ------ assuming rounds is the losers brackets rounds ------
   // losers rounds usually got some identical seeds amount like (2 - 2 - 1 - 1)
 
@@ -154,8 +154,8 @@ const Component = () => {
 ## Bracket Props
 
 | Prop                | Type                 | Description                                                                                                                                                              |
-| ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| rounds              | RoundProps[]         | Array of rounds, each round has {title,array of seeds}, if you're not using a custom seed render, each seed needs an array of teams, each team should have a name        |
+| ------------------- |----------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| rounds              | IRoundProps[]        | Array of rounds, each round has {title,array of seeds}, if you're not using a custom seed render, each seed needs an array of teams, each team should have a name        |
 | mobileBreakpoint    | number               | This bracket supports responsive design, on window reaching this size, it will trigger mobile swipable view, if you want to disable it, you can pass 0, (default is 992) |
 | rtl                 | boolean              | Direction of the bracket as RTL (default is LTR)                                                                                                                         |
 | roundClassName      | string               | Round wrapper className                                                                                                                                                  |
