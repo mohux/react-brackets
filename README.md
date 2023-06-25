@@ -27,6 +27,8 @@ yarn add --save react-brackets
 
 ## Usage
 
+### Basic Example
+
 The simplest usage of this component is
 
 ```jsx
@@ -65,6 +67,8 @@ const Component = () => {
 };
 ```
 
+### Custom Title
+
 The core shape is similar to the above, since we can customize seeds and titles, you can pass any additional data to a seed or treat the title as a component.
 
 modifying a title of the round is so simple,
@@ -85,6 +89,8 @@ const Component = () => {
   );
 };
 ```
+
+### Custom Seed
 
 Customizing a seed on the other hand is a little bit more complicated, yet still easy,
 because we need to let the bracket tree to have a consistent design
@@ -118,6 +124,8 @@ const Component = () => {
 };
 ```
 
+### Double Elimination
+
 How about if I want to use this component for double elimination losing bracket? the current Seed component only works on single elimination, the answer is fairly simple as well.
 
 ```jsx
@@ -142,6 +150,33 @@ const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex}: IRenderSeedProps)
         </div>
       </SeedItem>
     </Wrapper>
+  );
+};
+
+const Component = () => {
+  //....
+  return <Bracket rounds={rounds} renderSeedComponent={CustomSeed} />;
+};
+```
+
+### Loading
+
+```jsx
+import { Bracket, IRenderSeedProps, Seed, SeedItem, SeedTeam, SeedTime } from 'react-brackets';
+
+const CustomSeed = ({ seed, breakpoint }: IRenderSeedProps) => {
+  return (
+    <Seed mobileBreakpoint={breakpoint} className='test'>
+      <SeedItem className='skeleton-item'>
+        <div>
+          <SeedTeam>.</SeedTeam>
+          <SeedTeam>.</SeedTeam>
+        </div>
+      </SeedItem>
+      <SeedTime mobileBreakpoint={breakpoint} style={{ fontSize: 9 }}>
+        {seed.date}
+      </SeedTime>
+    </Seed>
   );
 };
 
