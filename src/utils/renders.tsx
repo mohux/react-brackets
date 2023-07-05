@@ -8,7 +8,7 @@ export const renderTitle = (title: string | JSX.Element) => <RoundTitle>{title}<
 
 /* ------------------------- default seed component ------------------------- */
 export const renderSeed = ({ seed, breakpoint, isMiddleOfTwoSided }: IRenderSeedProps) => {
-  const Wrapper = isMiddleOfTwoSided ? SingleLineSeed : Seed
+  const Wrapper = isMiddleOfTwoSided ? SingleLineSeed : Seed;
   return (
     <Wrapper mobileBreakpoint={breakpoint}>
       <SeedItem>
