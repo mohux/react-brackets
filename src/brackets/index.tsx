@@ -21,17 +21,6 @@ const SingleElimination = ({
   // Checking responsive size
   const isResponsive = useMedia(mobileBreakpoint);
 
-  const data = rounds.map((round, roundIdx) => (
-    <Round key={round.title} className={roundClassName} mobileBreakpoint={mobileBreakpoint}>
-      {round.title && roundTitleComponent(round.title, roundIdx)}
-      <SeedsList>
-        {round.seeds.map((seed, idx) => {
-          return getFragment(seed, roundIdx, idx, rounds, false)
-        })}
-      </SeedsList>
-    </Round>
-  ));
-
   const getFragment = (seed: ISeedProps, roundIdx: number, idx: number, rounds: IRoundProps[], isMiddleOfTwoSided: any) =>
     <Fragment key={seed.id}>
       {renderSeedComponent({
@@ -43,6 +32,17 @@ const SingleElimination = ({
         isMiddleOfTwoSided
       })}
     </Fragment>;
+
+  const data = rounds.map((round, roundIdx) => (
+    <Round key={round.title} className={roundClassName} mobileBreakpoint={mobileBreakpoint}>
+      {round.title && roundTitleComponent(round.title, roundIdx)}
+      <SeedsList>
+        {round.seeds.map((seed, idx) => {
+          return getFragment(seed, roundIdx, idx, rounds, false)
+        })}
+      </SeedsList>
+    </Round>
+  ));
 
   if (isResponsive) {
     // Since SwipeableViewsProps have an issue that it uses ref inside of it, We need to remove ref from the object
