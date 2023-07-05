@@ -2,6 +2,7 @@ import React from 'react';
 import DoubleElimination from './components/double-elimination';
 import LoadingBracket from './components/loading';
 import SingleElimination from './components/single-elimination';
+import TwoSidedSingleElimination from "./components/two-sided-single-elimination";
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
       <h3>Double Elimination</h3>
       <hr />
       <DoubleElimination />
+      <h3>Two Sided Single Elimination</h3>
+      <hr />
+      <TwoSidedSingleElimination />
     </div>
   );
 };

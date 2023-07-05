@@ -151,13 +151,46 @@ const Component = () => {
 };
 ```
 
+### Two-sided Single Elimination
+
+How to render Single Elimination as a two-sided bracket? You must set twoSided to true, and structure your custom seed render component like below, if you have a custom seed render component.
+
+```jsx
+import { Bracket, RoundProps, Seed, SeedItem, SeedTeam, RenderSeedProps } from 'react-brackets';
+import React from 'react';
+
+const CustomSeed = ({seed, breakpoint, roundIndex, seedIndex, isMiddleOfTwoSided}: RenderSeedProps) => {
+  // breakpoint passed to Bracket component
+  // to check if mobile view is triggered or not
+
+  // mobileBreakpoint is required to be passed down to a seed
+  const Wrapper = isMiddleOfTwoSided ? SingleLineSeed : Seed
+  return (
+    <Wrapper mobileBreakpoint={breakpoint} style={{ fontSize: 12 }}>
+      <SeedItem>
+        <div>
+          <SeedTeam style={{ color: 'red' }}>{seed.teams[0]?.name || 'NO TEAM '}</SeedTeam>
+          <SeedTeam>{seed.teams[1]?.name || 'NO TEAM '}</SeedTeam>
+        </div>
+      </SeedItem>
+    </Wrapper>
+  );
+};
+
+const Component = () => {
+  //....
+  return <Bracket rounds={rounds} renderSeedComponent={CustomSeed} twoSided={true} />;
+};
+```
+
 ## Bracket Props
 
 | Prop                | Type                 | Description                                                                                                                                                              |
-| ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|---------------------| -------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | rounds              | RoundProps[]         | Array of rounds, each round has {title,array of seeds}, if you're not using a custom seed render, each seed needs an array of teams, each team should have a name        |
 | mobileBreakpoint    | number               | This bracket supports responsive design, on window reaching this size, it will trigger mobile swipable view, if you want to disable it, you can pass 0, (default is 992) |
 | rtl                 | boolean              | Direction of the bracket as RTL (default is LTR)                                                                                                                         |
+| twoSided            | boolean              | Sets Single elimination to be two sided if true. Default is False                                                                                                        |
 | roundClassName      | string               | Round wrapper className                                                                                                                                                  |
 | bracketClassName    | string               | The bracket className                                                                                                                                                    |
 | renderSeedComponent | functional component | Custom render for every seed                                                                                                                                             |

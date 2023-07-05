@@ -12,6 +12,7 @@ export interface IRenderSeedProps {
   seed: ISeedProps;
   breakpoint: number;
   roundIndex: number;
+  isMiddleOfTwoSided: boolean;
   seedIndex: number;
   rounds?: IRoundProps[];
 }
