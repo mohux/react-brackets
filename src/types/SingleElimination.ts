@@ -26,4 +26,6 @@ export interface ISingleEliminationProps {
    * @param {number} roundIdx the current round index
    */
   renderSeedComponent?: (props: IRenderSeedProps) => JSX.Element;
+  /** @default false, if true component will be two-sided tournament **/
+  twoSided?: boolean;
 }

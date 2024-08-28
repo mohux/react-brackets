@@ -64,6 +64,9 @@ font-size: 14px;
     [dir="rtl"] & {
       left: -1.5em;
     }
+    [dir="twoSided"] & {
+      left: -1.5em;
+    }
     [dir="ltr"] & {
       right: -1.5em;
     }
